@@ -1,0 +1,347 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{C1B1BCF0-4F85-408D-A7C7-C6A7B75EC583}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>Hospital</RootNamespace>
+    <AssemblyName>Hospital</AssemblyName>
+    <TargetFrameworkVersion>v3.5</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <IsWebBootstrapper>true</IsWebBootstrapper>
+    <PublishUrl>G:\WORK\医疗\Service\</PublishUrl>
+    <Install>true</Install>
+    <InstallFrom>Web</InstallFrom>
+    <UpdateEnabled>true</UpdateEnabled>
+    <UpdateMode>Foreground</UpdateMode>
+    <UpdateInterval>7</UpdateInterval>
+    <UpdateIntervalUnits>Days</UpdateIntervalUnits>
+    <UpdatePeriodically>false</UpdatePeriodically>
+    <UpdateRequired>false</UpdateRequired>
+    <MapFileExtensions>true</MapFileExtensions>
+    <InstallUrl>http://192.168.0.106/</InstallUrl>
+    <CreateWebPageOnPublish>true</CreateWebPageOnPublish>
+    <WebPage>publish.htm</WebPage>
+    <ApplicationRevision>3</ApplicationRevision>
+    <ApplicationVersion>1.0.0.%2a</ApplicationVersion>
+    <UseApplicationTrust>false</UseApplicationTrust>
+    <PublishWizardCompleted>true</PublishWizardCompleted>
+    <BootstrapperEnabled>true</BootstrapperEnabled>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>0</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>x86</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestCertificateThumbprint>B2001A6AAB8F701A4F087C323F6A40084D14DEE5</ManifestCertificateThumbprint>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ManifestKeyFile>Hospital_TemporaryKey.pfx</ManifestKeyFile>
+  </PropertyGroup>
+  <PropertyGroup>
+    <GenerateManifests>true</GenerateManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <SignManifests>true</SignManifests>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>www.ico.la_360837d78fc7b1df2c9aa00a43b1761d_128X128.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Debug|x86'">
+    <DebugSymbols>true</DebugSymbols>
+    <OutputPath>bin\x86\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <DebugType>full</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)' == 'Release|x86'">
+    <OutputPath>bin\x86\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <Optimize>true</Optimize>
+    <DebugType>pdbonly</DebugType>
+    <PlatformTarget>x86</PlatformTarget>
+    <ErrorReport>prompt</ErrorReport>
+    <CodeAnalysisRuleSet>MinimumRecommendedRules.ruleset</CodeAnalysisRuleSet>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="ICSharpCode.SharpZipLib">
+      <HintPath>bin\Debug\NPOI\ICSharpCode.SharpZipLib.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI">
+      <HintPath>bin\Debug\NPOI\NPOI.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OOXML">
+      <HintPath>bin\Debug\NPOI\NPOI.OOXML.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXml4Net">
+      <HintPath>bin\Debug\NPOI\NPOI.OpenXml4Net.dll</HintPath>
+    </Reference>
+    <Reference Include="NPOI.OpenXmlFormats">
+      <HintPath>bin\Debug\NPOI\NPOI.OpenXmlFormats.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.configuration" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Management" />
+    <Reference Include="System.Web.Extensions" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Common\Commen.cs" />
+    <Compile Include="FrmDataExport.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDataExport.Designer.cs">
+      <DependentUpon>FrmDataExport.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmDataSave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmDataSave.Designer.cs">
+      <DependentUpon>FrmDataSave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmInfoShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmInfoShow.Designer.cs">
+      <DependentUpon>FrmInfoShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPanel.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPanel.Designer.cs">
+      <DependentUpon>FrmPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPatientInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPatientInfo.Designer.cs">
+      <DependentUpon>FrmPatientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmPatientInfoRevise.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmPatientInfoRevise.Designer.cs">
+      <DependentUpon>FrmPatientInfoRevise.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReceiverorSlave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReceiverorSlave.Designer.cs">
+      <DependentUpon>FrmReceiverorSlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSelectPatientInfo.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSelectPatientInfo.Designer.cs">
+      <DependentUpon>FrmSelectPatientInfo.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Frmsetok.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Frmsetok.Designer.cs">
+      <DependentUpon>Frmsetok.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmShow.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmShow.Designer.cs">
+      <DependentUpon>FrmShow.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmshowWindowset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmshowWindowset.Designer.cs">
+      <DependentUpon>FrmshowWindowset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSlave.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSlave.Designer.cs">
+      <DependentUpon>FrmSlave.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmMain.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmMain.Designer.cs">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmReceiver.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmReceiver.Designer.cs">
+      <DependentUpon>FrmReceiver.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmslaveRemove.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmslaveRemove.Designer.cs">
+      <DependentUpon>FrmslaveRemove.cs</DependentUpon>
+    </Compile>
+    <Compile Include="FrmSystemset.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="FrmSystemset.Designer.cs">
+      <DependentUpon>FrmSystemset.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Common\NPOI.cs" />
+    <Compile Include="Program.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <EmbeddedResource Include="FrmDataExport.resx">
+      <DependentUpon>FrmDataExport.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmDataSave.resx">
+      <DependentUpon>FrmDataSave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmInfoShow.resx">
+      <DependentUpon>FrmInfoShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPanel.resx">
+      <DependentUpon>FrmPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPatientInfo.resx">
+      <DependentUpon>FrmPatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmPatientInfoRevise.resx">
+      <DependentUpon>FrmPatientInfoRevise.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReceiver.resx">
+      <DependentUpon>FrmReceiver.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmReceiverorSlave.resx">
+      <DependentUpon>FrmReceiverorSlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSelectPatientInfo.resx">
+      <DependentUpon>FrmSelectPatientInfo.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Frmsetok.resx">
+      <DependentUpon>Frmsetok.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmShow.resx">
+      <DependentUpon>FrmShow.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmshowWindowset.resx">
+      <DependentUpon>FrmshowWindowset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSlave.resx">
+      <DependentUpon>FrmSlave.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmMain.resx">
+      <DependentUpon>FrmMain.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmslaveRemove.resx">
+      <DependentUpon>FrmslaveRemove.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="FrmSystemset.resx">
+      <DependentUpon>FrmSystemset.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <None Include="App.config">
+      <SubType>Designer</SubType>
+    </None>
+    <None Include="Hospital_TemporaryKey.pfx" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\DAL\DAL.csproj">
+      <Project>{65e236b5-512d-49d6-83c6-2018d2cc5873}</Project>
+      <Name>DAL</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Models\Models.csproj">
+      <Project>{5cf4291a-fae1-40ea-a87e-b5afa0338f42}</Project>
+      <Name>Models</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Protocol\Protocol.csproj">
+      <Project>{edb53ffa-7496-4bd5-a99c-e21d66c6a475}</Project>
+      <Name>Protocol</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Usblibrary\Usblibrary.csproj">
+      <Project>{b6d9fe1b-48c5-45cb-9992-dfe82aa459b1}</Project>
+      <Name>Usblibrary</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\WindowsFormsShow\WindowsFormsShow.csproj">
+      <Project>{331C6382-CC90-4290-9503-1BFAA0B3CDC9}</Project>
+      <Name>WindowsFormsShow</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <COMReference Include="AxWMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>aximp</WrapperTool>
+      <Isolated>False</Isolated>
+    </COMReference>
+    <COMReference Include="stdole">
+      <Guid>{00020430-0000-0000-C000-000000000046}</Guid>
+      <VersionMajor>2</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>primary</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+    <COMReference Include="WMPLib">
+      <Guid>{6BF52A50-394A-11D3-B153-00C04F79FAA6}</Guid>
+      <VersionMajor>1</VersionMajor>
+      <VersionMinor>0</VersionMinor>
+      <Lcid>0</Lcid>
+      <WrapperTool>tlbimp</WrapperTool>
+      <Isolated>False</Isolated>
+      <EmbedInteropTypes>True</EmbedInteropTypes>
+    </COMReference>
+  </ItemGroup>
+  <ItemGroup>
+    <BootstrapperPackage Include="Microsoft.Net.Framework.3.5.SP1">
+      <Visible>False</Visible>
+      <ProductName>.NET Framework 3.5 SP1</ProductName>
+      <Install>true</Install>
+    </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="www.ico.la_360837d78fc7b1df2c9aa00a43b1761d_128X128.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
