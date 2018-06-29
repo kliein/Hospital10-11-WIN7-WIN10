@@ -413,8 +413,14 @@ namespace Hospital
         }
         private void btnreadsave_Click(object sender, EventArgs e)
         {
+
             if (usbisexited())
             {              
+                return;
+            }
+            if (Commen.machineType)
+            {
+                MessageBox.Show("当前设备为接收机！无法读取！","系统提示");
                 return;
             }
             DataHelper.Flag = 14;
@@ -461,6 +467,11 @@ namespace Hospital
         {
             if (usbisexited())
             {                
+                return;
+            }
+            if (Commen.machineType)
+            {
+                MessageBox.Show("当前设备为接收机！无法清除记录！");
                 return;
             }
             DataHelper.Flag = 16;
@@ -601,6 +612,11 @@ namespace Hospital
             if (usbisexited())
             {
                 
+                return;
+            }
+            if (Commen.machineType)
+            {
+                MessageBox.Show("当前设备为接收机！无法导出记录！");
                 return;
             }
             string strSaveFileLocation = "";

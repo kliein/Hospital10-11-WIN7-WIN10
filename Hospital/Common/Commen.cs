@@ -15,5 +15,6 @@ namespace Hospital
         public static bool ISHour = true;
         public static byte[] lastcommand =null;
         public static byte sendcountnum= 0;
+        public static bool machineType = false;
     }
 }

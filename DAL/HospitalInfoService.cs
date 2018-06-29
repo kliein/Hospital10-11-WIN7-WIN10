@@ -12,6 +12,17 @@ namespace DAL
     /// </summary>
    public  class HospitalInfoService
     {
+
+        public int insertInfo(HospitalInfo hospitalInfo)
+        {
+            string sql = "insert into HospitalInfo(HospitalName,Department,Flag) values('{0}','{1}','{2}') ";
+            sql = string.Format(sql,hospitalInfo.HospitalName,hospitalInfo.Department,1);
+            int res = SQLiteHelper.Update(sql);
+            return res;
+        }
+
+
+
         /// <summary>
         /// 添加医院信息
         /// </summary>

@@ -482,6 +482,12 @@ namespace Hospital
         /// <param name="e"></param>
         private void U_exportBtnClick(object sender, EventArgs e)
         {
+            if (Commen.machineType)
+            {
+                MessageBox.Show("当前连接仪器为接收机，请连接血氧仪再尝试该操作！","系统提示");
+                return;
+            }
+
             Button btn = (Button)sender;
             string str2 = "";
             for (int i = 0; i < MyShowblock.Count; i++)
@@ -638,6 +644,7 @@ namespace Hospital
         {
             this.panel_window1.Controls.Clear();
             MyShowblock.RemoveRange(0, MyShowblock.Count);
+            MyShowblock1.RemoveRange(0, MyShowblock1.Count);
             ShowInfo objShowInfo = objShowInfoService.GetShowInfo();
             HospitalInfo objHospitalInfo = objHospitalInfoService.GetHospitalInfo();
             if (objHospitalInfo != null)
@@ -649,6 +656,10 @@ namespace Hospital
             {
                 this.toolStripStatusLabel7.Text = "未设置";
                 this.toolStripStatusLabel9.Text = "未设置";
+                HospitalInfo hospitalInfo = new HospitalInfo();
+                hospitalInfo.HospitalName = "未设置";
+                hospitalInfo.Department = "未设置";
+                objHospitalInfoService.insertInfo(hospitalInfo);
             }
             bed_name = objPatientService.Getbednumandname();
             additionalbed_name = objAdditionalPatientsService.Getadditionalbednumandname();
@@ -1044,6 +1055,7 @@ namespace Hospital
                                 //objFrmReceiverorSlave.ShowDialog();
                                 this.toolStripStatusLabel5.Text = "当前连接设备为接收机！";
                                 datarece.RemoveRange(0, datarece.Count);
+                                Commen.machineType = true;
                                 //objFrmReceiverorSlave.Dispose();
                             }
                             else if (datarece[13] == 2)
@@ -1438,7 +1450,7 @@ namespace Hospital
                                             MyShowblock[i].O2flow = "暂停";
                                             MyShowblock[i].Bpm = "暂停";
                                             MyShowblock[i].Time = "暂停";
-                                            if (patientsstate[INFO[4]] != INFO[6])
+                                            if (patientsstate[INFO[4]] != INFO[6]) 
                                             {
                                                 objPatientBodyInfoService.AddPatientBodyInfo((DataHelper.ProtocolaSqldata(INFO)));
                                                 patientsstate[INFO[4]] = INFO[6];

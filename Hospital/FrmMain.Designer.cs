@@ -259,7 +259,7 @@
             // 
             // timer3
             // 
-            this.timer3.Interval = 900000;
+            this.timer3.Interval = 30000;
             this.timer3.Tick += new System.EventHandler(this.timer3_Tick);
             // 
             // timer_send_command
